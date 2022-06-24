@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func redValueChanged() {
-        redValueLabel.text = String(format: "%.2f", greenSlider.value)
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
         setupViewColor()
     }
     
@@ -39,12 +39,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func blueValueChanged() {
-        blueValueLabel.text = String(format: "%.2f", greenSlider.value)
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
         setupViewColor()
     }
     
     private func setupViewColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
 }
 
