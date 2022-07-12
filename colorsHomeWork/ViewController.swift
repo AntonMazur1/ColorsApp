@@ -19,37 +19,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    private let cornerRadiusValue: CGFloat = 10
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViewColor()
-        colorView.layer.cornerRadius = cornerRadiusValue
+        colorView.layer.cornerRadius = 10
+        setColor()
+        setupLabels(for: redValueLabel, blueValueLabel, greenValueLabel)
     }
     
-    @IBAction func redValueChanged() {
-        redValueLabel.text = String(format: "%.2f", redSlider.value)
-        setupViewColor()
+    @IBAction func rgbSliderChanged(_ sender: UISlider) {
+        setColor()
+        setupLabels(for: redValueLabel, blueValueLabel, greenValueLabel)
     }
     
-    @IBAction func greenValueChanged() {
-        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        setupViewColor()
-    }
-    
-    @IBAction func blueValueChanged() {
-        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
-        setupViewColor()
-    }
-    
-    private func setupViewColor() {
+    private func setColor() {
         colorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1
         )
+    }
+    
+    private func setupLabels(for labels: UILabel...) {
+        for label in labels {
+            switch label {
+            case redValueLabel:
+                redValueLabel.text = String(format: "%.2f", redSlider.value)
+            case blueValueLabel:
+                blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+            default:
+                greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+            }
+        }
     }
 }
 

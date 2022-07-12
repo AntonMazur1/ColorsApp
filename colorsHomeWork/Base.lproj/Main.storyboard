@@ -9,6 +9,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="X9H-XI-RYh">
+            <objects>
+                <viewController id="LQz-Xf-SyL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1lK-Ys-7tl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EdV-eu-VJD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgc-C3-IOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="72"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="colorsHomeWork" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,21 +88,21 @@
                                         <rect key="frame" x="-2" y="0.0" width="278" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="redValueChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="o2Q-8m-MAz"/>
+                                            <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rvn-oC-iUZ"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-T7-glW">
                                         <rect key="frame" x="-2" y="44" width="278" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="greenValueChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="05H-Mc-ad8"/>
+                                            <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="e02-gL-8NC"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-GT-q1P">
                                         <rect key="frame" x="-2" y="88" width="278" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="blueValueChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="CY1-3Z-EhN"/>
+                                            <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ji8-lC-zwQ"/>
                                         </connections>
                                     </slider>
                                 </subviews>
