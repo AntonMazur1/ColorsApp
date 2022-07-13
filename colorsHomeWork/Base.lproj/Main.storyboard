@@ -104,24 +104,24 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="z7B-MK-f7V">
-                                <rect key="frame" x="120" y="296" width="274" height="118"/>
+                                <rect key="frame" x="120" y="296" width="239" height="118"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-p2-3Jx">
-                                        <rect key="frame" x="-2" y="0.0" width="278" height="31"/>
+                                        <rect key="frame" x="-2" y="0.0" width="243" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
                                             <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rvn-oC-iUZ"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-T7-glW">
-                                        <rect key="frame" x="-2" y="44" width="278" height="31"/>
+                                        <rect key="frame" x="-2" y="44" width="243" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
                                             <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="e02-gL-8NC"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-GT-q1P">
-                                        <rect key="frame" x="-2" y="88" width="278" height="31"/>
+                                        <rect key="frame" x="-2" y="88" width="243" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
                                             <action selector="rgbSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ji8-lC-zwQ"/>
@@ -138,21 +138,46 @@
                                     <action selector="doneButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="j77-gU-YWJ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RjA-QS-OUl">
+                                <rect key="frame" x="367" y="296" width="31" height="118"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-DJ-BGH">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NHo-5X-FpG">
+                                        <rect key="frame" x="0.0" y="42" width="31" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i48-hM-QeA">
+                                        <rect key="frame" x="0.0" y="84" width="31" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="i2J-2Z-udv"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RjA-QS-OUl" firstAttribute="top" secondItem="vbv-95-djJ" secondAttribute="bottom" constant="62" id="80f-lN-hlb"/>
                             <constraint firstItem="vbv-95-djJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HJH-PJ-3Bs"/>
                             <constraint firstItem="vbv-95-djJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ljs-et-7eo"/>
                             <constraint firstItem="xRw-yd-FJK" firstAttribute="top" secondItem="vbv-95-djJ" secondAttribute="bottom" constant="67" id="Vzr-Ll-Wcx"/>
                             <constraint firstItem="vbv-95-djJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.903382" id="bHK-vJ-bqg"/>
                             <constraint firstItem="xRw-yd-FJK" firstAttribute="leading" secondItem="mZG-B5-PM0" secondAttribute="trailing" constant="8.5" id="d56-dk-hIM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jCi-Ze-3zU" secondAttribute="bottom" constant="150" id="eWf-QG-VP9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="z7B-MK-f7V" secondAttribute="trailing" id="kCd-e2-0vp"/>
+                            <constraint firstItem="RjA-QS-OUl" firstAttribute="leading" secondItem="z7B-MK-f7V" secondAttribute="trailing" constant="8" symbolic="YES" id="lRd-G9-LcU"/>
                             <constraint firstItem="mZG-B5-PM0" firstAttribute="top" secondItem="vbv-95-djJ" secondAttribute="bottom" constant="67" id="owx-TM-283"/>
                             <constraint firstItem="z7B-MK-f7V" firstAttribute="top" secondItem="vbv-95-djJ" secondAttribute="bottom" constant="62" id="qKo-y7-v5w"/>
                             <constraint firstItem="mZG-B5-PM0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rKG-Qr-eSc"/>
                             <constraint firstItem="vbv-95-djJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.140625" id="ru2-ZP-hRr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RjA-QS-OUl" secondAttribute="trailing" constant="16" id="uPZ-ib-2sJ"/>
                             <constraint firstItem="jCi-Ze-3zU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vGI-Kd-xWF"/>
                             <constraint firstItem="z7B-MK-f7V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="vTo-JS-Ji9"/>
                         </constraints>
@@ -161,14 +186,29 @@
                     <connections>
                         <outlet property="blueSlider" destination="YfS-GT-q1P" id="rO8-fs-iF5"/>
                         <outlet property="blueValueLabel" destination="Xct-oE-xhj" id="exq-KS-1nG"/>
+                        <outlet property="blueValueTF" destination="i48-hM-QeA" id="0Bl-RG-cny"/>
                         <outlet property="colorView" destination="vbv-95-djJ" id="EgZ-6e-6fe"/>
                         <outlet property="greenSlider" destination="fcB-T7-glW" id="RsD-T6-kAQ"/>
                         <outlet property="greenValueLabel" destination="9ZY-lT-nuw" id="KKb-DR-sCS"/>
+                        <outlet property="greenValueTF" destination="NHo-5X-FpG" id="c0f-Ju-zxC"/>
                         <outlet property="redSlider" destination="nS5-p2-3Jx" id="HXP-j2-uSm"/>
                         <outlet property="redValueLabel" destination="1le-LA-0Oc" id="9VC-vi-vcB"/>
+                        <outlet property="redValueTF" destination="Esy-DJ-BGH" id="AAa-eT-cgb"/>
+                        <outlet property="toolBar" destination="Rm2-wy-WqZ" id="VxU-Kb-Rue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Rm2-wy-WqZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="done" id="wvF-8p-6sE">
+                            <connections>
+                                <action selector="doneToolBarPressed:" destination="BYZ-38-t0r" id="gTp-Gs-t8B"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="71.651785714285708"/>
         </scene>

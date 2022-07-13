@@ -11,6 +11,8 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView!
     
+    @IBOutlet var toolBar: UIToolbar!
+    
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
     @IBOutlet weak var blueValueLabel: UILabel!
@@ -19,25 +21,36 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
+    @IBOutlet weak var redValueTF: UITextField!
+    @IBOutlet weak var greenValueTF: UITextField!
+    @IBOutlet weak var blueValueTF: UITextField!
+    
     var delegate: SettingsViewControllerDelegate!
     var viewBackground: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        redValueTF.delegate = self
+        greenValueTF.delegate = self
+        blueValueTF.delegate = self
+        
         navigationItem.hidesBackButton = true
         colorView.layer.cornerRadius = 10
         setReceivedColor()
-        setupLabels(for: redValueLabel, blueValueLabel, greenValueLabel)
     }
     
     @IBAction func rgbSliderChanged(_ sender: UISlider) {
         setColor()
-        setupLabels(for: redValueLabel, blueValueLabel, greenValueLabel)
     }
     
     @IBAction func doneButtonPressed() {
         delegate.setNewColor(colorView.backgroundColor!)
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func doneToolBarPressed(_ sender: Any) {
+        view.endEditing(true)
     }
     
     private func setColor() {
@@ -47,6 +60,8 @@ class SettingsViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1
         )
+        setupLabels(for: redValueLabel, blueValueLabel, greenValueLabel)
+        setupTextFields(for: redValueTF, greenValueTF,blueValueTF)
     }
     
     private func setReceivedColor() {
@@ -69,5 +84,40 @@ class SettingsViewController: UIViewController {
             }
         }
     }
+    
+    private func setupTextFields(for textFields: UITextField...) {
+        for textField in textFields {
+            switch textField {
+            case redValueTF:
+                redValueTF.text = redValueLabel.text
+            case greenValueTF:
+                greenValueTF.text = greenValueLabel.text
+            default:
+                blueValueTF.text = blueValueLabel.text
+            }
+        }
+    }
 }
 
+//MARK: Settings View Controller Delegate
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.inputAccessoryView = toolBar
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let numberValue = Float(newValue) else { return }
+        if textField == redValueTF {
+            redSlider.value = numberValue
+            setColor()
+        } else if textField == greenValueTF {
+            greenSlider.value = numberValue
+            setColor()
+        } else {
+            blueSlider.value = numberValue
+            setColor()
+        }
+    }
+}
